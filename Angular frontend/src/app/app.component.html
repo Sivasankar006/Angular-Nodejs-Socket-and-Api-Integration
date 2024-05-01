@@ -1,0 +1,97 @@
+
+<div class="popup-background"  *ngIf="isPopupOpen">
+  <div class="popup-content">
+    <h3>Studentdetails</h3>
+
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+    
+      <div class="form-row">
+
+        <div class="col-md-3 mb-3">
+          <label for="name">Roll Number</label>
+          <input type="text" class="form-control"  name="_id" #_id="ngModel"  [(ngModel)]="model._id" 
+            placeholder="Enter the roll number" required>
+  
+        </div>
+
+
+        
+        <div class="col-md-3 mb-3">
+          <label for="name">User Name</label>
+          <input type="text" class="form-control"   name="name" #name="ngModel"  [(ngModel)]="model.name" 
+            placeholder="Enter the Name" required>
+  
+        </div>
+  
+        <div class="col-md-3 mb-3">
+          <label for="email">Email</label>
+          <input type="text" class="form-control"   name="email" #email="ngModel"  [(ngModel)]="model.email"  placeholder="Enter the Email"
+            required>
+  
+        </div>
+  
+        <div class="col-md-3 mb-3">
+          <label for="street">Password</label>
+          <input type="text" class="form-control"   name="password" #password="ngModel"  [(ngModel)]="model.password"  placeholder="Enter the Password"
+            required>
+  
+        </div>
+  
+      </div>
+  
+  
+  
+      <button class="btn btn-primary me-2" type="submit" >Sign Up</button>
+      <button class="btn btn-primary me-2" (click)="closePopup()" >Close</button>
+
+    </form>
+   
+  </div>
+</div> -->
+
+
+
+<div class="col-12 maindata">
+  <form #form="ngForm" (ngSubmit)="postfunction()" class="chat-form">
+    
+    <div class="form-row">
+  
+      <div class="col-md-12 mb-3">
+        <label for="name">User Name</label>
+        <input type="text" class="form-control chat-input" name="name" #name="ngModel" [(ngModel)]="model.name" placeholder="Enter the Name" required>
+      </div>
+  
+      <div class="col-md-12 mb-3">
+        <label for="email">Email</label>
+        <input type="text" class="form-control chat-input" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="Enter the Email" required>
+      </div>
+  
+      <div class="col-md-12 mb-3">
+        <label for="street">Message</label>
+        <input type="text" class="form-control chat-input" name="message" #message="ngModel" [(ngModel)]="model.message" placeholder="Enter the Message" required>
+      </div>
+  
+    </div>
+  
+    <button class="btn btn-primary chat-btn" type="submit">Send</button>
+  </form>
+</div>
+
+<div class="col-12 chat">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userMessage">
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.message }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

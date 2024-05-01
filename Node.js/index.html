@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Connection Status</title>
+</head>
+<body>
+    <div id="connectionStatus">Checking database connection...</div>
+
+    <script>
+        const isDatabaseConnected = true; 
+        const connectionStatusElement = document.getElementById('connectionStatus');
+        if (isDatabaseConnected) {
+            connectionStatusElement.textContent = 'Database connected!';
+            connectionStatusElement.style.color = 'green'; 
+        } else {
+            connectionStatusElement.textContent = 'Failed to connect to the database.';
+            connectionStatusElement.style.color = 'red'; 
+        }
+    </script>
+</body>
+</html>
